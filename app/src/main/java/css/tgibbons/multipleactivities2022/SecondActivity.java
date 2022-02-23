@@ -19,19 +19,11 @@ public class SecondActivity extends AppCompatActivity {
 
         textViewData = (TextView) findViewById(R.id.textViewData);
 
+        // Get data from Main Activity
         Bundle extras = getIntent().getExtras();
         name = extras.getString("MainName");
         num = extras.getDouble("MainNumber");
         textViewData.setText("Name : " + name + " Number : " + num);
-
     }
 
-    @Override
-    public void finish() {
-        Intent intent = new Intent();
-        intent.putExtra("NewName", name+"@css.edu");
-        intent.putExtra("NewNum", num * 2);
-        setResult(RESULT_OK, intent);
-        super.finish();
-    }
 }
